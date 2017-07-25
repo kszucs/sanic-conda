@@ -1,0 +1,63 @@
+package:
+  name: httptools
+  version: "0.0.9"
+
+source:
+  fn: httptools-0.0.9.tar.gz
+  url: https://pypi.python.org/packages/09/a6/9c2bc8d96a06613e32e5b1dc74299dea24cecf6856cb2db8a05b13a24546/httptools-0.0.9.tar.gz
+  md5: 97cf5e61ce91bbe5cc0a9e51767befa2
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch: python
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - httptools = httptools:main
+    #
+    # Would create an entry point called httptools that calls httptools.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  # Python imports
+  imports:
+    - httptools
+    - httptools.parser
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  #home: The package home page
+  license: MIT License
+  summary: 'A collection of framework independent HTTP protocol utils.'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

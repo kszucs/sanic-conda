@@ -1,0 +1,66 @@
+package:
+  name: sanic-session
+  version: "0.1.5"
+
+source:
+  fn: sanic_session-0.1.5.tar.gz
+  url: https://pypi.python.org/packages/ea/59/13516bf4d72ff552899f320c3fe28f4829b3d3041bfc8ffe4c7a185296b0/sanic_session-0.1.5.tar.gz
+  md5: b81f8a916ef490c85dc1d1fcf991ed94
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch: python
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - sanic_session = sanic_session:main
+    #
+    # Would create an entry point called sanic_session that calls sanic_session.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - sanic
+    - ujson
+
+  run:
+    - python
+    - sanic
+    - ujson
+
+test:
+  # Python imports
+  imports:
+    - sanic_session
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://github.com/subyraman/sanic_session
+  license: MIT
+  summary: 'Provides server-backed sessions for Sanic using Redis, Memcache and more.'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

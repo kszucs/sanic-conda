@@ -1,0 +1,65 @@
+package:
+  name: sanic-cors
+  version: "0.5.4.2"
+
+source:
+  fn: Sanic-Cors-0.5.4.2.tar.gz
+  url: https://pypi.python.org/packages/68/85/91bb56a1c5975744202f792f48075d043155f5ea833160848cedc6719fa3/Sanic-Cors-0.5.4.2.tar.gz
+  md5: c1f2c1ba0b530181cf4151a13219f208
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch: python
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - sanic-cors = sanic-cors:main
+    #
+    # Would create an entry point called sanic-cors that calls sanic-cors.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - sanic ==0.5.4
+
+  run:
+    - python
+    - sanic ==0.5.4
+
+test:
+  # Python imports
+  imports:
+    - sanic_cors
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - nose
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/ashleysommer/sanic-cors
+  license: MIT License
+  summary: 'A Sanic extension adding a decorator for CORS support. Based on flask-cors by Cory Dolphin.'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
